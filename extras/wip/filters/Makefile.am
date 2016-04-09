@@ -52,4 +52,8 @@ if HAVE_FILTER_VOID
 SUBDIRS	+=	filter-void
 endif
 
+if HAVE_FILTER_X_ORIGINAL_TO
+SUBDIRS +=	filter-x-original-to
+endif
+
 man_MANS =	filter_api.3

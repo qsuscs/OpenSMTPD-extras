@@ -1170,6 +1170,18 @@ AC_ARG_WITH([filter-void],
 )
 AM_CONDITIONAL([HAVE_FILTER_VOID], [test $HAVE_FILTER_VOID = yes])
 
+HAVE_FILTER_X_ORIGINAL_TO=no
+AC_ARG_WITH([filter-x-original-to],
+	[  --with-filter-x-original-to Enable filter x-original-to],
+	[
+		if test "x$withval" != "xno" ; then
+			AC_DEFINE([HAVE_FILTER_X_ORIGINAL_TO], [1],
+				  [Define if you have filter x-original-to])
+			HAVE_FILTER_X_ORIGINAL_TO=yes
+		fi
+	]
+)
+AM_CONDITIONAL([HAVE_FILTER_X_ORIGINAL_TO], [test $HAVE_FILTER_X_ORIGINAL_TO = yes])
 
 #
 # QUEUES
@@ -1694,6 +1706,7 @@ AC_CONFIG_FILES([Makefile
 		extras/wip/filters/filter-stub/Makefile
 		extras/wip/filters/filter-trace/Makefile
 		extras/wip/filters/filter-void/Makefile
+		extras/wip/filters/filter-x-original-to/Makefile
 
 		extras/wip/queues/Makefile
 		extras/wip/queues/queue-null/Makefile
